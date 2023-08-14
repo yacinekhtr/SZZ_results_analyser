@@ -8,6 +8,18 @@ Class {
 }
 
 { #category : #'as yet unclassified' }
+SZZImporter class >> findFilesChangedByBugfixesFrom: filePath to: csvFilePath [
+
+	| importer |
+	importer := SZZImporter new.
+	"filePath := 'H:\SZZUnleashed\sortie\darkreader__darkreader\annotations.json'."
+	importer importFrom: filePath.
+
+	"csvFilePath := 'H:\modele_darkreader.csv'."
+	importer exportToCSV: csvFilePath
+]
+
+{ #category : #'as yet unclassified' }
 SZZImporter >> exportToCSV: csvFilePath [
     | csvString |
     csvString := 'Commit ID,Files' , String crlf.
